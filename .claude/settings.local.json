@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:web.archive.org)",
+      "WebFetch(domain:www.montereyonewater.org)",
+      "WebFetch(domain:www.waterboards.ca.gov)",
+      "Bash(git -C \"c:\\\\Users\\\\Gavin\\\\OneDrive - Cal Poly\\\\Desktop\\\\Claude Code\\\\New folder\\\\GeoTracker\" log --oneline -5)",
+      "Bash(python -c:*)",
+      "Bash(pip install:*)"
+    ]
+  }
+}

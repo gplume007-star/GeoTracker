@@ -1,0 +1,41 @@
+{
+  "run_timestamp": "2026-02-10T20:48:00.603230",
+  "parameters": {
+    "center_lat": 37.701,
+    "center_lon": -122.471,
+    "radius_miles": 0.1,
+    "delay_seconds": 5.0,
+    "headless": false
+  },
+  "totals": {
+    "sites_in_radius": 4,
+    "sites_processed": 2,
+    "sites_with_documents": 0,
+    "sites_no_documents": 2,
+    "sites_failed": 0,
+    "sites_skipped": 0,
+    "total_documents_downloaded": 0
+  },
+  "sites": [
+    {
+      "global_id": "T0608135649",
+      "business_name": "PACIFIC PLAZA - BLOCK 51",
+      "distance_miles": 0.052,
+      "status": "no_documents",
+      "documents_found": 0,
+      "documents_downloaded": 0,
+      "zip_file": null,
+      "errors": []
+    },
+    {
+      "global_id": "T0608100152",
+      "business_name": "CITY OF DALY CITY",
+      "distance_miles": 0.06,
+      "status": "no_documents",
+      "documents_found": 0,
+      "documents_downloaded": 0,
+      "zip_file": null,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "run_timestamp": "2026-02-10T20:38:31.386110",
+  "parameters": {
+    "center_lat": 34.0522,
+    "center_lon": -118.2437,
+    "radius_miles": 0.2,
+    "delay_seconds": 5.0,
+    "headless": false
+  },
+  "totals": {
+    "sites_in_radius": 11,
+    "sites_processed": 0,
+    "sites_with_documents": 0,
+    "sites_no_documents": 0,
+    "sites_failed": 0,
+    "sites_skipped": 0,
+    "total_documents_downloaded": 0
+  },
+  "sites": []
+}
