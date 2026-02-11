@@ -124,12 +124,13 @@ class GeoTrackerDownloader:
     DOWNLOAD_URL = "https://geotracker.waterboards.ca.gov/profile_report?global_id={}&mytab=sitedocuments&zipdownload=True"
     HOME_URL = "https://geotracker.waterboards.ca.gov/"
 
-    def __init__(self, output_dir, delay, timeout, headless, resume):
+    def __init__(self, output_dir, delay, timeout, headless, resume, chrome_version=None):
         self.output_dir = Path(output_dir)
         self.delay = delay
         self.timeout = timeout
         self.headless = headless
         self.resume = resume
+        self.chrome_version = chrome_version
         self.driver = None
         self.base_temp_dir = None
         self.results = []
@@ -160,7 +161,13 @@ class GeoTrackerDownloader:
         options.add_argument('--disable-gpu')
         options.add_argument('--window-size=1920,1080')
 
-        self.driver = uc.Chrome(options=options, version_main=144)
+        chrome_kwargs = {'options': options}
+        if self.chrome_version:
+            chrome_kwargs['version_main'] = self.chrome_version
+            logger.info(f"Using specified Chrome version: {self.chrome_version}")
+        else:
+            logger.info("Auto-detecting Chrome version")
+        self.driver = uc.Chrome(**chrome_kwargs)
         self.driver.set_page_load_timeout(self.timeout)
         self.driver.implicitly_wait(10)
         logger.info("Browser initialized")
@@ -657,6 +664,8 @@ Examples:
                         help='Run browser in headless mode (may not bypass Cloudflare)')
     parser.add_argument('--resume', action='store_true',
                         help='Skip sites that already have a zip in output-dir')
+    parser.add_argument('--chrome-version', type=int, default=None,
+                        help='Chrome major version number (auto-detected if omitted)')
 
     args = parser.parse_args()
 
@@ -706,6 +715,7 @@ Examples:
         timeout=args.timeout,
         headless=args.headless,
         resume=args.resume,
+        chrome_version=args.chrome_version,
     )
     downloader.center_lat = args.lat
     downloader.center_lon = args.lon
