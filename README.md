@@ -66,10 +66,10 @@ The script reads `sites.txt` and uses the `GLOBAL_ID`, `BUSINESS_NAME`, `LATITUD
 
 ### Basic Usage
 
-Download documents for all sites within 5 miles of a location:
+Download documents for all sites within 0.1 miles of a location (GeoTracker has many sites on it, use a small radius):
 
 ```bash
-python geotracker_downloader.py --lat 34.0522 --lon -118.2437 --radius 5
+python geotracker_downloader.py --lat 37.701 --lon -122.471 --radius .1
 ```
 
 ### Resume an Interrupted Run
@@ -77,7 +77,7 @@ python geotracker_downloader.py --lat 34.0522 --lon -118.2437 --radius 5
 If a download session is interrupted, re-run with `--resume` to skip sites that already have a ZIP file in the output directory:
 
 ```bash
-python geotracker_downloader.py --lat 34.0522 --lon -118.2437 --radius 5 --resume
+python geotracker_downloader.py --lat 37.701 --lon -122.471 --radius .1 --resume
 ```
 
 ### Limit the Number of Sites
